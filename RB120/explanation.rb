@@ -378,5 +378,4 @@ class RPSGame
   end
 end
 
-#RPSGame.new.play
-p Bender.ancestors
+RPSGame.new.play
