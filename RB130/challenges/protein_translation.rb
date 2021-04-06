@@ -22,14 +22,11 @@ CODON_TO_PROTEIN = {
 
 class Translation
   def self.of_codon(codon)
-    CODON_TO_PROTEIN[codon]
+    CODON_TO_PROTEIN.fetch(codon) {fail InvalidCodonError}
   
   end
 
   def self.of_rna(strand)
-    keys = CODON_TO_PROTEIN.keys
-    raise InvalidCodonError if keys.each {|key| !strand.include?(key)}
-    
     array = []
     counter = 0
     index = 2
@@ -39,10 +36,7 @@ class Translation
       counter += 3
       index += 3 
     end
-
-
-    array.take_while {|x| CODON_TO_PROTEIN[x] != "STOP"}.map do |letter|
-      CODON_TO_PROTEIN[letter]
-    end
+    
+    array.take_while {|x| of_codon(x) != "STOP"}.map {|code| of_codon(code)}
   end
 end

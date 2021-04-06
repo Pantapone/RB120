@@ -1,0 +1,23 @@
+{
+  "name": "launchschool",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Pantapone/RB120.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Pantapone/RB120/issues"
+  },
+  "homepage": "https://github.com/Pantapone/RB120#readme",
+  "dependencies": {
+    "readline-sync": "^1.4.10"
+  }
+}

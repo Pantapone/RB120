@@ -112,12 +112,35 @@ class TodoList
     end
 
     def select
-      results = []
-      @todos.each do |todo|
-        results << todo if yield(todo)
+      list = TodoList.new(title)
+      each do |todo|
+        list.add(todo) if yield(todo)
       end
-  
-      self
+      list
+    end
+
+    def find_by_title(string)
+      select {|todo| todo.tile == title}.first
+    end
+
+    def all_done
+      select {|todo| todo.done?}
+    end
+
+    def all_not_done
+      select {|todo| !todo.done?}
+    end
+
+    def mark_done
+      find_by_title(title) && find_by_title(title).done!
+    end
+
+    def mark_all_done
+      each {|todo| todo.done!}
+    end
+
+    def mark_all_undone
+      each {|todo| todo.undone!}
     end
 end
 
