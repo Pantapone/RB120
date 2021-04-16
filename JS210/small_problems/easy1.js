@@ -106,46 +106,106 @@
 // 
 
 
-function isLeapYear(year) {
-if (!(year % 4 === 0)) {
-  return false;
-}
-else if (year % 100 === 0 && year % 400 === 0) {
-  return true;
-}
-else {
-  return false;
-}
-}
+// function isLeapYear(year) {
+// if (!(year % 4 === 0)) {
+//   return false;
+// }
+// else if (year % 100 === 0 && year % 400 === 0) {
+//   return true;
+// }
+// else {
+//   return false;
+// }
+// }
 
 
-console.log(isLeapYear(2016));      // true
-isLeapYear(2015);      // false
-isLeapYear(2100);      // false
-isLeapYear(2400);      // true
-isLeapYear(240000);    // true
-isLeapYear(240001);    // false
-isLeapYear(2000);      // true
-isLeapYear(1900);      // false
-isLeapYear(1752);      // true
-isLeapYear(1700);      // false
-isLeapYear(1);         // false
-isLeapYear(100);       // false
-isLeapYear(400);       // true
+// console.log(isLeapYear(2016));      // true
+// isLeapYear(2015);      // false
+// isLeapYear(2100);      // false
+// isLeapYear(2400);      // true
+// isLeapYear(240000);    // true
+// isLeapYear(240001);    // false
+// isLeapYear(2000);      // true
+// isLeapYear(1900);      // false
+// isLeapYear(1752);      // true
+// isLeapYear(1700);      // false
+// isLeapYear(1);         // false
+// isLeapYear(100);       // false
+// isLeapYear(400);       // true
 
 
 
-(false && undefined);
-(false || undefined);
-((false && undefined) || (false || undefined));
-((false || undefined) || (false && undefined));
-((false && undefined) && (false || undefined));
-((false || undefined) && (false && undefined));
-('a' || (false && undefined) || '');
-((false && undefined) || 'a' || '');
-('a' && (false || undefined) && '');
-((false || undefined) && 'a' && '');
+// 8
 
-false
-undefined
+// function isLeapYear(year) {
+//   if (year < 1752 && year % 4 === 0) {
+//     return true;
+//   } else if (year % 400 === 0) {
+//     return true;
+//   } else if (year % 100 === 0) {
+//     return false;
+//   } else {
+//     return year % 4 === 0;
+//   }
+// }
 
+// isLeapYear(2016);      // true
+// isLeapYear(2015);      // false
+// isLeapYear(2100);      // false
+// isLeapYear(2400);      // true
+// isLeapYear(240000);    // true
+// isLeapYear(240001);    // false
+// isLeapYear(2000);      // true
+// isLeapYear(1900);      // false
+// isLeapYear(1752);      // true
+// isLeapYear(1700);      // true
+// isLeapYear(1);         // false
+// isLeapYear(100);       // true
+// isLeapYear(400);       // true
+
+
+
+// 9
+
+
+// function multisum(num) {
+//   const newArray = [];
+//   let total = 0;
+//   for (let i = 1; i <= num; i++) {
+//     if (i % 3 === 0 || i % 5 === 0) {
+//       total += i;
+//     }
+//   }
+//   return total;
+// }
+
+// console.log(multisum(3));       // 3
+// console.log(multisum(5));       // 8
+// console.log(multisum(10));      // 33
+// console.log(multisum(1000));    // 234168
+
+// 10
+
+
+// function utf16Value(string) {
+//   let array = string.split("");
+
+//   let total = 0;
+//   for (let i = 0; i < array.length; i++) {
+//     total += array[i].charCodeAt();
+//   }
+//   return total;
+// }
+
+
+// console.log(utf16Value('Four score'));         // 984
+// console.log(utf16Value('Launch School'));      // 1251
+// console.log(utf16Value('a'));                  // 97
+// console.log(utf16Value(''));                   // 0
+
+// // The next three lines demonstrate that the code
+// // works with non-ASCII characters from the UTF-16
+// // character set.
+// const OMEGA = "\u03A9";             // UTF-16 character 'Ω' (omega)
+// console.log(utf16Value(OMEGA));                  // 937
+// console.log(utf16Value(OMEGA + OMEGA + OMEGA));  // 2811
